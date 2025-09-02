@@ -1,19 +1,49 @@
 public class Main {
     public static void main(String[] args) {
-        EmendaIndividual ind = new EmendaIndividual("001", "Autor A", "PE", 2025, "Transferência");
-        ind.adicionarDocumento(new Documento("D1", "2025-01-01", Documento.Fase.EMPENHO, 1000, "Empenho inicial"));
-        ind.adicionarConvenio(new Convenio("C1", "Convênio Saúde", 1000));
-        System.out.println(ind.paraTexto());
+        Documento doc = new Documento("Projeto de Lei", "Descrição do projeto");
+        System.out.println(doc);
 
-        EmendaBancada bac = new EmendaBancada("002", "Bancada PE", "PE", 2025, "linkAta");
-        bac.adicionarMembro("Deputado X");
-        System.out.println(bac.paraTexto());
+        Convenio conv = new Convenio("Convênio de Saúde", 50000);
+        System.out.println(conv);
 
-        EmendaComissao com = new EmendaComissao("003", "Comissão Saúde", "PE", 2025, "linkComissao", "linkRelatorio");
-        System.out.println(com.paraTexto());
+       
+        Emenda emendaI1 = new EmendaIndividual("Tulio Gadêlha", 1100000);
+        Emenda emendaI2 = new EmendaIndividual("Ossesio Silva", 171727);
+        Emenda emendaI3 = new EmendaIndividual("Eduardo da Fonte", 82000);
 
-        EmendaRelator rel = new EmendaRelator("004", "Relator Geral", "PE", 2025, "Fulano");
-        System.out.println(rel.paraTexto());
+        
+        Emenda emendaB1 = new EmendaBancada("Bancada de Pernambuco (Palmares 2021)", 674000);
+        Emenda emendaB2 = new EmendaBancada("Bancada de Pernambuco (Cortes 2023)", 200000);
+        Emenda emendaB3 = new EmendaBancada("Bancada de Pernambuco (Toritama 2025)", 1260000);
+
+    
+        Emenda emendaC1 = new EmendaComissao("Comissão da Saúde (Cortes 2024)", 986375);
+        Emenda emendaC2 = new EmendaComissao("Comissão da Saúde (Cortes 2024, v2)", 1520000);
+        Emenda emendaC3 = new EmendaComissao("Comissão da Saúde (Cortes 2024, v3)", 2212025);
+
+ 
+        Emenda emendaR1 = new EmendaRelator("Relator Geral (Palmares 2021)", 999970);
+        Emenda emendaR2 = new EmendaRelator("Relator Geral (Palmares 2021, v2)", 1000000);
+        Emenda emendaR3 = new EmendaRelator("Relator Geral (Toritama 2022)", 1300000);
+
+    
+        System.out.println(emendaI1);
+        System.out.println(emendaI2);
+        System.out.println(emendaI3);
+
+        System.out.println(emendaB1);
+        System.out.println(emendaB2);
+        System.out.println(emendaB3);
+
+        System.out.println(emendaC1);
+        System.out.println(emendaC2);
+        System.out.println(emendaC3);
+
+        System.out.println(emendaR1);
+        System.out.println(emendaR2);
+        System.out.println(emendaR3);
+
+        doc.setFase(Documento.Fase.ANALISE);
+        System.out.println("Documento atualizado: " + doc);
     }
 }
-
