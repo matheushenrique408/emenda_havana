@@ -43,7 +43,6 @@ public class Main {
         System.out.println(emendaR2);
         System.out.println(emendaR3);
 
-        doc.setFase(Documento.Fase.ANALISE);
-        System.out.println("Documento atualizado: " + doc);
     }
 }
+
