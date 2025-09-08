@@ -1,13 +1,11 @@
-class Documento {
-    enum Fase { EMPENHO, LIQUIDACAO, PAGAMENTO }
-
+public class Documento {
     private String id;
     private String data;
-    private Fase fase;
+    private String fase;      // agora é String (antes era enum)
     private double valor;
     private String descricao;
 
-    public Documento(String id, String data, Fase fase, double valor, String descricao) {
+    public Documento(String id, String data, String fase, double valor, String descricao) {
         this.id = id;
         this.data = data;
         this.fase = fase;
@@ -15,7 +13,7 @@ class Documento {
         this.descricao = descricao;
     }
 
-    public Fase getFase() { return fase; }
+    public String getFase() { return fase; }
     public double getValor() { return valor; }
     public String getData() { return data; }
     public String getId() { return id; }
@@ -25,3 +23,7 @@ class Documento {
         return "Documento: " + id + " - " + descricao + " (" + valor + ")";
     }
 }
+
+    }
+}
+
