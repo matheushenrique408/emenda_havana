@@ -1,48 +1,50 @@
 public class Main {
     public static void main(String[] args) {
-        Documento doc = new Documento("Projeto de Lei", "Descrição do projeto");
-        System.out.println(doc);
-
-        Convenio conv = new Convenio("Convênio de Saúde", 50000);
-        System.out.println(conv);
-
-       
-        Emenda emendaI1 = new EmendaIndividual("Tulio Gadêlha", 1100000);
-        Emenda emendaI2 = new EmendaIndividual("Ossesio Silva", 171727);
-        Emenda emendaI3 = new EmendaIndividual("Eduardo da Fonte", 82000);
-
         
-        Emenda emendaB1 = new EmendaBancada("Bancada de Pernambuco (Palmares 2021)", 674000);
-        Emenda emendaB2 = new EmendaBancada("Bancada de Pernambuco (Cortes 2023)", 200000);
-        Emenda emendaB3 = new EmendaBancada("Bancada de Pernambuco (Toritama 2025)", 1260000);
+        Documento doc = new Documento("D001", "01/09/2025", "Aprovado", 500000, "Projeto de Lei");
+        System.out.println(doc.paraTexto());
 
-    
-        Emenda emendaC1 = new EmendaComissao("Comissão da Saúde (Cortes 2024)", 986375);
-        Emenda emendaC2 = new EmendaComissao("Comissão da Saúde (Cortes 2024, v2)", 1520000);
-        Emenda emendaC3 = new EmendaComissao("Comissão da Saúde (Cortes 2024, v3)", 2212025);
+        Convenio conv = new Convenio("C001", "Convênio de Saúde", 50000);
+        System.out.println(conv.paraTexto());
 
- 
-        Emenda emendaR1 = new EmendaRelator("Relator Geral (Palmares 2021)", 999970);
-        Emenda emendaR2 = new EmendaRelator("Relator Geral (Palmares 2021, v2)", 1000000);
-        Emenda emendaR3 = new EmendaRelator("Relator Geral (Toritama 2022)", 1300000);
+        Emenda emendaI1 = new EmendaIndividual("EI001", "Tulio Gadêlha", "PE", 2025, "Saúde");
+        Emenda emendaI2 = new EmendaIndividual("EI002", "Ossesio Silva", "PE", 2025, "Educação");
+        Emenda emendaI3 = new EmendaIndividual("EI003", "Eduardo da Fonte", "PE", 2025, "Infraestrutura");
 
-    
-        System.out.println(emendaI1);
-        System.out.println(emendaI2);
-        System.out.println(emendaI3);
+        EmendaBancada emendaB1 = new EmendaBancada("EB001", "Bancada de Pernambuco", "PE", 2021, "linkAta1");
+        emendaB1.adicionarMembro("Membro A");
+        emendaB1.adicionarMembro("Membro B");
 
-        System.out.println(emendaB1);
-        System.out.println(emendaB2);
-        System.out.println(emendaB3);
+        EmendaBancada emendaB2 = new EmendaBancada("EB002", "Bancada de Pernambuco", "PE", 2023, "linkAta2");
+        emendaB2.adicionarMembro("Membro C");
 
-        System.out.println(emendaC1);
-        System.out.println(emendaC2);
-        System.out.println(emendaC3);
+        EmendaBancada emendaB3 = new EmendaBancada("EB003", "Bancada de Pernambuco", "PE", 2025, "linkAta3");
+        emendaB3.adicionarMembro("Membro D");
+        emendaB3.adicionarMembro("Membro E");
+        emendaB3.adicionarMembro("Membro F");
 
-        System.out.println(emendaR1);
-        System.out.println(emendaR2);
-        System.out.println(emendaR3);
+        EmendaComissao emendaC1 = new EmendaComissao("EC001", "Comissão da Saúde", "PE", 2024, "linkCom1", "linkRel1");
+        EmendaComissao emendaC2 = new EmendaComissao("EC002", "Comissão da Saúde v2", "PE", 2024, "linkCom2", "linkRel2");
+        EmendaComissao emendaC3 = new EmendaComissao("EC003", "Comissão da Saúde v3", "PE", 2024, "linkCom3", "linkRel3");
 
+        EmendaRelator emendaR1 = new EmendaRelator("ER001", "Relator Geral", "PE", 2021, "Relator X");
+        EmendaRelator emendaR2 = new EmendaRelator("ER002", "Relator Geral v2", "PE", 2021, "Relator Y");
+        EmendaRelator emendaR3 = new EmendaRelator("ER003", "Relator Geral", "PE", 2022, "Relator Z");
+
+        System.out.println(emendaI1.paraTexto());
+        System.out.println(emendaI2.paraTexto());
+        System.out.println(emendaI3.paraTexto());
+
+        System.out.println(emendaB1.paraTexto());
+        System.out.println(emendaB2.paraTexto());
+        System.out.println(emendaB3.paraTexto());
+
+        System.out.println(emendaC1.paraTexto());
+        System.out.println(emendaC2.paraTexto());
+        System.out.println(emendaC3.paraTexto());
+
+        System.out.println(emendaR1.paraTexto());
+        System.out.println(emendaR2.paraTexto());
+        System.out.println(emendaR3.paraTexto());
     }
 }
-
